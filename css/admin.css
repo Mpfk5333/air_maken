@@ -1,0 +1,203 @@
+/* admin.css - Styles généraux du back-office */
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-main);
+}
+
+/* 1. Sidebar admin */
+.admin-sidebar {
+    width: 280px;
+    background-color: var(--primary-dark);
+    color: var(--text-on-primary);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-right: 2px solid var(--secondary);
+}
+
+.admin-sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text-on-primary);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-sidebar-logo .logo-highlight {
+    color: var(--secondary);
+}
+
+.admin-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.admin-menu a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition-fast);
+}
+
+.admin-menu a:hover, .admin-menu a.active {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--text-on-primary);
+}
+
+.admin-menu a.active {
+    background-color: var(--secondary);
+    color: var(--text-on-primary);
+}
+
+/* 2. Zone de Contenu */
+.admin-main {
+    flex-grow: 1;
+    margin-left: 280px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.admin-navbar {
+    height: 75px;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.admin-content {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+}
+
+/* 3. Grille des Widgets */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.widget-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.widget-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.widget-info h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: var(--font-title);
+    color: var(--text-main);
+    line-height: 1.1;
+}
+
+.widget-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.2rem;
+}
+
+.widget-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.widget-icon.pending { background-color: var(--warning-light); color: var(--warning); }
+.widget-icon.success { background-color: var(--success-light); color: var(--success); }
+.widget-icon.messages { background-color: var(--info-light); color: var(--info); }
+.widget-icon.clients { background-color: var(--primary-glow); color: var(--primary); }
+
+/* 4. Filtres de table */
+.table-filter-bar {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    background-color: var(--bg-card);
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+}
+
+.table-filter-bar form {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* 5. Grille de Détails */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.admin-card-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .admin-sidebar {
+        display: none;
+    }
+    .admin-main {
+        margin-left: 0;
+    }
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}

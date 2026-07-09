@@ -1,0 +1,89 @@
+/* variables.css - Couleurs, typographies, espacements (racine graphique) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Palette de couleurs HSL */
+    --primary-h: 215;
+    --primary-s: 85%;
+    --primary-l: 28%;
+    
+    --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+    --primary-light: hsl(var(--primary-h), var(--primary-s), 45%);
+    --primary-dark: hsl(var(--primary-h), var(--primary-s), 15%);
+    --primary-glow: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.15);
+    
+    --secondary-h: 24;
+    --secondary-s: 95%;
+    --secondary-l: 50%;
+    
+    --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+    --secondary-light: hsl(var(--secondary-h), var(--secondary-s), 62%);
+    --secondary-dark: hsl(var(--secondary-h), var(--secondary-s), 35%);
+    
+    --accent: hsl(45, 100%, 50%); /* Gold */
+    
+    /* Couleurs neutres (Thème Clair par défaut) */
+    --bg-main: hsl(220, 30%, 97%);
+    --bg-card: hsl(0, 0%, 100%);
+    --bg-card-hover: hsl(220, 30%, 99%);
+    --border-color: hsl(220, 15%, 90%);
+    --text-main: hsl(220, 25%, 15%);
+    --text-muted: hsl(220, 12%, 50%);
+    --text-light: hsl(220, 10%, 75%);
+    --text-on-primary: hsl(0, 0%, 100%);
+    
+    /* Statuts */
+    --success: hsl(145, 80%, 40%);
+    --success-light: hsl(145, 80%, 95%);
+    --danger: hsl(355, 85%, 50%);
+    --danger-light: hsl(355, 85%, 95%);
+    --warning: hsl(40, 95%, 50%);
+    --warning-light: hsl(40, 95%, 95%);
+    --info: hsl(190, 90%, 45%);
+    --info-light: hsl(190, 90%, 95%);
+    
+    /* Typographies */
+    --font-title: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Espacements */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 1.5rem;   /* 24px */
+    --spacing-lg: 2.5rem;   /* 40px */
+    --spacing-xl: 4rem;     /* 64px */
+    
+    /* Arrondis */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 8px 24px rgba(26, 38, 57, 0.06);
+    --shadow-lg: 0 16px 40px rgba(26, 38, 57, 0.12);
+    --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    
+    /* Transitions et Effets */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-blur: blur(12px);
+}
+
+/* Thème Sombre */
+[data-theme="dark"] {
+    --bg-main: hsl(220, 20%, 10%);
+    --bg-card: hsl(220, 20%, 14%);
+    --bg-card-hover: hsl(220, 20%, 18%);
+    --border-color: hsl(220, 15%, 20%);
+    --text-main: hsl(220, 20%, 92%);
+    --text-muted: hsl(220, 10%, 65%);
+    --text-light: hsl(220, 8%, 40%);
+    --glass-bg: rgba(26, 32, 44, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.35);
+}

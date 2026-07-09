@@ -1,0 +1,130 @@
+/* navbar.css - Style de la barre de navigation */
+
+.main-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--glass-bg);
+    border-bottom: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+/* Logo design */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--primary);
+    transition: var(--transition-fast);
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    transform: rotate(-15deg);
+    transition: var(--transition);
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(0deg) scale(1.1);
+}
+
+.logo-highlight {
+    color: var(--secondary);
+}
+
+/* Nav Menu */
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.nav-link {
+    font-family: var(--font-title);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    padding: 0.5rem 0.2rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: var(--transition);
+    border-radius: var(--radius-full);
+}
+
+.nav-link:hover {
+    color: var(--secondary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Actions block */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.user-logged {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.user-welcome {
+    color: var(--text-muted);
+    margin-right: var(--spacing-xs);
+}
+
+.admin-btn {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.admin-btn:hover {
+    background-color: var(--secondary);
+    color: var(--text-on-primary);
+}
+
+/* Burger Toggle Button */
+.burger-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    padding: 0.5rem;
+    transition: var(--transition-fast);
+}
+
+.burger-toggle:hover {
+    color: var(--secondary);
+}

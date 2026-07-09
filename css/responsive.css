@@ -1,0 +1,359 @@
+/* responsive.css - Media queries complètes (mobile / tablette / desktop) */
+
+/* =====================================================
+   UTILITAIRES GLOBAUX LIÉS AUX ANIMATIONS (main.js)
+   ===================================================== */
+
+/* Animate-on-scroll : état initial */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header scrollé */
+.main-header.header-scrolled {
+    box-shadow: var(--shadow-md);
+    background-color: var(--glass-bg);
+}
+
+/* Styles des erreurs/validation de champs */
+.field-error {
+    border-color: var(--danger) !important;
+    background-color: var(--danger-light) !important;
+}
+
+.field-valid {
+    border-color: var(--success) !important;
+}
+
+.field-error-msg {
+    display: block;
+    color: var(--danger);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    font-weight: 600;
+}
+
+.char-counter {
+    display: block;
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+/* Section Padding utilitaire */
+.section-padding {
+    padding: var(--spacing-xl) 0;
+}
+
+.bg-light {
+    background-color: var(--bg-main);
+}
+
+/* Image responsive */
+.img-responsive {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Bouton scroll-to-top */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 46px;
+    height: 46px;
+    background-color: var(--secondary);
+    color: var(--text-on-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 1.1rem;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scrollTopBtn.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+    background-color: var(--secondary-dark);
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   RESERVATION TABLE (admin & espace client)
+   ===================================================== */
+.reservation-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.reservation-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.reservation-table th,
+.reservation-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+
+.reservation-table th {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    background-color: var(--bg-main);
+}
+
+.reservation-table tbody tr:hover {
+    background-color: var(--bg-card-hover);
+}
+
+/* =====================================================
+   BREAKPOINT : TABLETTE (max 992px)
+   ===================================================== */
+@media (max-width: 992px) {
+
+    /* Navigation mobile */
+    .burger-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--bg-card);
+        border-left: 1px solid var(--border-color);
+        padding: 6rem var(--spacing-md) var(--spacing-md);
+        box-shadow: var(--shadow-lg);
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .nav-menu.nav-open {
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 0.75rem 0;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Espace client layout */
+    .account-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Page accueil */
+    .presentation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    /* Page contact */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Page à propos */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Admin sidebar */
+    .admin-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        display: flex !important;
+        z-index: 200;
+    }
+
+    .admin-sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
+   BREAKPOINT : MOBILE (max 768px)
+   ===================================================== */
+@media (max-width: 768px) {
+
+    /* Tailles de titres */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    /* Container padding réduit */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Stats grid : 2 colonnes */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Services grid : 1 colonne */
+    .services-grid,
+    .services-list-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reassurance grid : 1 colonne */
+    .reassurance-grid,
+    .advantages-grid,
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Boutons actions hero */
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Filtre tableau admin */
+    .table-filter-bar form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Category tabs */
+    .category-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: var(--spacing-xs);
+    }
+
+    .tab-btn {
+        white-space: nowrap;
+    }
+
+    /* Dashboard widgets */
+    .dashboard-grid,
+    .admin-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Formulaire réservation */
+    .reservation-container {
+        padding: var(--spacing-sm);
+    }
+
+    /* Info items contact */
+    .info-item {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+}
+
+/* =====================================================
+   BREAKPOINT : TRÈS PETIT MOBILE (max 480px)
+   ===================================================== */
+@media (max-width: 480px) {
+
+    /* Stats grid : 1 colonne */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Widgets admin : 1 colonne */
+    .dashboard-grid,
+    .admin-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Section padding réduit */
+    .section-padding {
+        padding: var(--spacing-lg) 0;
+    }
+
+    /* Stat card centré */
+    .stat-card {
+        padding: var(--spacing-sm);
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    /* Formulaires pleine largeur */
+    .form-group {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Bouton retour haut */
+    #scrollTopBtn {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}

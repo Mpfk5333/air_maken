@@ -1,0 +1,109 @@
+/* auth.css - Styles des pages de connexion / inscription */
+
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 180px);
+    padding: var(--spacing-lg) var(--spacing-sm);
+    background: radial-gradient(circle at 10% 20%, rgba(0, 63, 135, 0.04) 0%, rgba(255, 107, 53, 0.04) 90%);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 480px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-lg);
+    transition: var(--transition);
+}
+
+.auth-card:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 20px 50px rgba(26, 38, 57, 0.15);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.auth-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.auth-logo .logo-highlight {
+    color: var(--secondary);
+}
+
+.auth-title {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.auth-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+.auth-forgot {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -0.5rem;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.85rem;
+}
+
+.auth-forgot a {
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+}
+
+.auth-forgot a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.auth-footer a {
+    color: var(--primary);
+    font-weight: 700;
+    transition: var(--transition-fast);
+}
+
+.auth-footer a:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Double-column fields on registration */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+}
+
+@media (max-width: 576px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

@@ -1,0 +1,116 @@
+/* reservations.css - Styles spécifiques à la page Réservations */
+
+.reservation-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.service-type-selector {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.service-type-selector select {
+    width: 100%;
+    max-width: 450px;
+    padding: 0.85rem 1.1rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-title);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.service-type-selector select:focus {
+    border-color: var(--primary);
+    background-color: var(--bg-card);
+}
+
+/* Animations transition pour affichage des champs spécifiques */
+.dynamic-fields-section {
+    display: none;
+    animation: fadeInField 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dynamic-fields-section.active {
+    display: block;
+}
+
+@keyframes fadeInField {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tableaux d'historique */
+.reservation-table-wrapper {
+    overflow-x: auto;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.reservation-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reservation-table th {
+    background-color: var(--bg-main);
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-align: left;
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.reservation-table td {
+    padding: 1.1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    vertical-align: top;
+}
+
+.reservation-table tr:last-child td {
+    border-bottom: none;
+}
+
+.reservation-table tr:hover td {
+    background-color: var(--bg-card-hover);
+}
+
+/* Listes de détails */
+.details-list {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.details-list li {
+    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.details-list li i {
+    font-size: 0.75rem;
+    color: var(--secondary);
+}
